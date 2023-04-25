@@ -9,14 +9,11 @@ Chat History:
 Follow Up Input: {question}
 Standalone question:`;
 
-const QA_PROMPT = `You are a helpful AI assistant. Use the following pieces of context to answer the question at the end.
-If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
-If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
-
+const QA_PROMPT = `Você é uma AI especializada em Autogestão e na tecnologia social O2 da Target Teal. Use os textos abaixo para extrair informações que possam responder a pergunta. 
 {context}
 
-Question: {question}
-Helpful answer in markdown:`;
+Questão: {question}
+Resposta:`;
 
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
